@@ -1,0 +1,28 @@
+sudo su -
+source /opt/ros/foxy/setup.bash
+source /opt/intel/openvino_2021/bin/setupvars.sh
+source /media/deepracer/wook/FinalCode/Deep_pkgAA/install/setup.bash
+
+// AA사용패키지
+cd /media/deepracer/wook/FinalCode/Deep_pkgAA
+// 기본 패키지
+cd /media/deepracer/wook/FinalCode/Deep_pkg
+
+root계정이라 Display가 없다고 뜨는데 x서버에 접근할 수 있도록 허용해줘서 해결
+xhost +SI:localuser:root
+export DISPLAY=:0
+
+cd /media/deepracer/wook/FinalCode/AA
+export PARA_SDK=/media/deepracer/wook/FinalCode/PARA_SDK
+export PARA_CORE=$PARA_SDK
+export PARA_CONF=$PARA_SDK/etc
+export PARA_APPL=$PARA_SDK/opt
+export PARA_DATA=$PARA_SDK/var
+export LD_LIBRARY_PATH=$PARA_SDK/lib
+
+ cmake -B build -D CMAKE_INSTALL_PREFIX=$PARA_SDK
+ cmake --build build -j $(nproc)
+ cmake --install build
+ cd $PARA_SDK/bin
+./EM
+
