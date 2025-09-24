@@ -8,3 +8,5 @@
 AI모델 디렉토리 위치 /opt/aws/deepracer/artifacts/bucket38(.xml, .pb파일)
 
 AI모델 파일 필요시 연락주시면 보내드리겠습니다
+
+[![deepracer 로봇 데모](https://img.youtube.com/vi/P8s7qXrRdfY/hqdefault.jpg)](https://youtu.be/P8s7qXrRdfY)
